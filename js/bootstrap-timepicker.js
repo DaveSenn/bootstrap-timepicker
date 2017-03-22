@@ -156,6 +156,12 @@
       } else {
         this.minute = newVal;
       }
+	  
+	  // CHANGE
+	   if (this.hour >= this.maxHours - 1 && this.minute > 0) {
+		console.log('hahahah');
+		this.decrementHour();  
+	  }
     },
 
     decrementSecond: function() {
@@ -536,7 +542,7 @@
       }
     },
 
-    incrementHour: function() {
+    incrementHour: function() {	
       if (this.showMeridian) {
         if (this.hour === 11) {
           this.hour++;
@@ -545,7 +551,10 @@
           this.hour = 0;
         }
       }
+	  
+	  // CHANGE
       if (this.hour === this.maxHours - 1) {
+	  //if (this.hour === this.maxHours) {
         this.hour = 0;
 
         return;
@@ -568,6 +577,13 @@
       } else {
         this.minute = newVal;
       }
+	  
+	  // CHANGE
+	  if (this.hour >= this.maxHours - 1 && this.minute > 0) {
+		console.log('fack');
+		this.incrementHour();  
+	  }
+	  
     },
 
     incrementSecond: function() {
