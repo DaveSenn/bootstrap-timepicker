@@ -121,4 +121,5 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jasmine', 'jshint']);
   grunt.registerTask('compile', ['jshint', 'jasmine', 'uglify', 'less:prod']);
   grunt.registerTask('compileAll', ['jshint', 'jasmine', 'uglify', 'less:dev', 'less:prod']);
+  grunt.registerTask('compileNew', ['uglify', 'less:dev', 'less:prod']);
 };
