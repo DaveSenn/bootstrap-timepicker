@@ -143,9 +143,7 @@
         } else {
           this.hour--;
         }
-      }
-	  
-	   
+      }	   
     },
 
     decrementMinute: function(step) {
@@ -160,14 +158,18 @@
       if (newVal < 0) {
         this.decrementHour();
         this.minute = newVal + 60;
+		 // CHANGE
+		if (this.hour === this.maxHours - 1 && this.maxHours === 25) {
+			this.minute = 0;
+		}
       } else {
         this.minute = newVal;
-      }
-	  
-	  // CHANGE
-	   if (this.hour >= this.maxHours - 1 && this.minute > 0) {
-		this.decrementHour();  
-	  }
+		// CHANGE
+		if (this.hour >= this.maxHours - 1 && this.minute > 0) {
+			this.decrementHour();  
+			this.minute = 0;
+		}
+      }  
     },
 
     decrementSecond: function() {
