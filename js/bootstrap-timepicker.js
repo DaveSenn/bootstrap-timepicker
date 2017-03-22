@@ -118,6 +118,11 @@
     },
 
     decrementHour: function() {
+		 // CHANGE
+		if (this.hour === 0 && this.maxHours === 25) {
+			this.minute = 0;
+		}
+	  
       if (this.showMeridian) {
         if (this.hour === 1) {
           this.hour = 12;
@@ -139,6 +144,8 @@
           this.hour--;
         }
       }
+	  
+	   
     },
 
     decrementMinute: function(step) {
@@ -553,11 +560,15 @@
 	  
 	  // CHANGE
       if (this.hour === this.maxHours - 1) {
-	  //if (this.hour === this.maxHours) {
         this.hour = 0;
 
         return;
       }
+	   // CHANGE
+	  if (this.hour === this.maxHours - 2) {
+		  this.minute = 0;
+	  }
+	  
       this.hour++;
     },
 
