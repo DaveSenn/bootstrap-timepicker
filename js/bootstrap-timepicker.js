@@ -159,7 +159,6 @@
 	  
 	  // CHANGE
 	   if (this.hour >= this.maxHours - 1 && this.minute > 0) {
-		console.log('hahahah');
 		this.decrementHour();  
 	  }
     },
@@ -580,7 +579,6 @@
 	  
 	  // CHANGE
 	  if (this.hour >= this.maxHours - 1 && this.minute > 0) {
-		console.log('fack');
 		this.incrementHour();  
 	  }
 	  
