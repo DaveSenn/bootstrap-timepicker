@@ -852,7 +852,7 @@
 
         minute = timeArray[1] ? timeArray[1].toString() : '';
         second = timeArray[2] ? timeArray[2].toString() : '';
-		console.log('hi 1');
+		
         // adaptive time parsing
         if (hour.length > 4) {
           second = hour.slice(-2);
@@ -900,7 +900,6 @@
 		// Change
 		if(hour >= this.maxHours - 1) {
 			minute = 0;
-			console.log('reset minute')
 		}
 
         if (this.showMeridian) {
@@ -1060,8 +1059,6 @@
               this.$widget.find('input.bootstrap-timepicker-minute').val() +
               (this.showSeconds ? ':' + this.$widget.find('input.bootstrap-timepicker-second').val() : '') +
               (this.showMeridian ? this.$widget.find('input.bootstrap-timepicker-meridian').val() : '');
-
-		console.log('UPDATE FROM INPUT');
 			  
       this.setTime(t, true);
     },
